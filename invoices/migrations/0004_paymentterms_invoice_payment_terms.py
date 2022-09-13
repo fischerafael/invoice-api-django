@@ -22,7 +22,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='invoice',
             name='payment_terms',
-            field=models.ForeignKey(default=django.utils.timezone.now, on_delete=django.db.models.deletion.CASCADE, to='invoices.paymentterms'),
-            preserve_default=False,
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='invoices.paymentterms')            
         ),
     ]
