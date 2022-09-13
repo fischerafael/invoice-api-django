@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Invoice, Currency
+from .models.invoice import Invoice, Currency
 
 class InvoiceAdmin(admin.ModelAdmin):
     list_display = ['id', 'date', 'currency', 'total', 'client']

@@ -1,12 +1,7 @@
 from django.db import models
 
 from clients.models import Client
-
-class Currency(models.Model):   
-    name = models.TextField(max_length=10)   
-
-    def __str__(self):
-        return self.name
+from invoices.models.currency import Currency
 
 class Invoice(models.Model):
     date = models.DateField(auto_now=True)
@@ -14,6 +9,6 @@ class Invoice(models.Model):
     currency = models.ForeignKey(Currency, on_delete=models.CASCADE)  
     client = models.ForeignKey(Client, on_delete=models.CASCADE)  
 
-    # def __str__(self):
-    #     return self.date
+    def __str__(self):
+        return str(self.date)
 
