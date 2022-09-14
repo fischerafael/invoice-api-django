@@ -1,5 +1,8 @@
 from django.contrib import admin
+
+from .models.service import Service
 from .models.invoice import Invoice, Currency
+
 
 class InvoiceAdmin(admin.ModelAdmin):
     list_display = ['id', 'date', 'currency', 'total', 'client']
@@ -13,5 +16,12 @@ class CurrencyAdmin(admin.ModelAdmin):
     search_fields = ['id', 'name']
     list_per_page = 20
 
+class ServiceAdmin(admin.ModelAdmin):
+    list_display = ['title', 'dayRate']
+    list_display_links = ['title']
+    search_fields = ['title']
+    list_per_page = 20
+
 admin.site.register(Invoice, InvoiceAdmin)
 admin.site.register(Currency, CurrencyAdmin)
+admin.site.register(Service, ServiceAdmin)
