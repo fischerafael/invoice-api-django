@@ -17,8 +17,7 @@ class Invoice(models.Model):
     paymentTerms = models.CharField(max_length=62,choices=PAYMENT_TERMS, default='eom')
     currency = models.ForeignKey(Currency, on_delete=models.CASCADE)  
     client = models.ForeignKey(Client, on_delete=models.CASCADE)   
-    services = models.ManyToManyField(Service)  
-
+   
     def __str__(self):
         return str(self.date)
 

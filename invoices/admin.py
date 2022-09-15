@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from invoices.models.invoiceServices import InvoiceService
 from .models.service import Service
 from .models.invoice import Invoice, Currency
 
@@ -25,3 +26,4 @@ class ServiceAdmin(admin.ModelAdmin):
 admin.site.register(Invoice, InvoiceAdmin)
 admin.site.register(Currency, CurrencyAdmin)
 admin.site.register(Service, ServiceAdmin)
+admin.site.register(InvoiceService)
